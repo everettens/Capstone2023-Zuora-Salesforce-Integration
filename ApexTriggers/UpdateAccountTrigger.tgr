@@ -1,0 +1,35 @@
+trigger UpdateAccountTrigger on Account (after update) {
+    String zID;
+    if (trigger.isAfter){
+      	//Fire updates
+      	List<Map<String, Object>> accountList = new List<Map<String, Object>>();
+        
+        
+        for (Account acc : Trigger.new) {
+            if (acc.IsDeleted || acc.MasterRecordId != null || acc.ParentId != null) {
+                continue; // Skip accounts that are deleted, duplicates, or child accounts
+            }
+            Map<String, Object> accountMap = new Map<String, Object>();
+           
+            accountMap.put('Id', acc.zID__c);
+            accountMap.put('Name', acc.Name);
+            accountMap.put('Notes', acc.Description);
+            accountList.add(accountMap);
+            zID = acc.zID__c;
+        }//end for
+        
+        if (accountList.size() > 0 && zID != null) {
+            Map<String, Object> jsonMap = new Map<String, Object>();
+            jsonMap.put('objects', accountList);
+            jsonMap.put('type', 'Account');
+            String jsonString = JSON.serialize(jsonMap);
+            
+            UpdateAccountHelper.sendUpdateJson(jsonString, zID);
+           
+        }//end if
+        else if(zID == null){
+            System.debug('zID is null');
+        }
+     }
+    
+}//end trigger

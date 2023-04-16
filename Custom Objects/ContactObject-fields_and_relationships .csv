@@ -1,0 +1,35 @@
+Field Label,Field Name,Data Type,Controlling Field,Indexed
+Account Name,AccountId,Lookup(Account),,TRUE
+Assistant,AssistantName,Text(40),,FALSE
+Asst. Phone,AssistantPhone,Phone,,FALSE
+Birthdate,Birthdate,Date,,FALSE
+Clean Status,CleanStatus,Picklist,,TRUE
+Contact Owner,OwnerId,Lookup(User),,TRUE
+Created By,CreatedById,Lookup(User),,FALSE
+Data.com Key,Jigsaw,Text(20),,FALSE
+Department,Department,Text(80),,FALSE
+Description,Description,Long Text Area(32000),,FALSE
+Do Not Call,DoNotCall,Checkbox,,FALSE
+Email,Email,Email,,TRUE
+Email Opt Out,HasOptedOutOfEmail,Checkbox,,FALSE
+Fax,Fax,Fax,,FALSE
+Fax Opt Out,HasOptedOutOfFax,Checkbox,,FALSE
+Gender Identity,GenderIdentity,Picklist,,FALSE
+Home Phone,HomePhone,Phone,,FALSE
+Individual,IndividualId,Lookup(Individual),,TRUE
+Languages,Languages__c,Text(100),,FALSE
+Last Modified By,LastModifiedById,Lookup(User),,FALSE
+Last Stay-in-Touch Request Date,LastCURequestDate,Date/Time,,FALSE
+Last Stay-in-Touch Save Date,LastCUUpdateDate,Date/Time,,FALSE
+Lead Source,LeadSource,Picklist,,FALSE
+Level,Level__c,Picklist,,FALSE
+Mailing Address,MailingAddress,Address,,FALSE
+Mobile,MobilePhone,Phone,,FALSE
+Name,Name,Name,,TRUE
+Other Address,OtherAddress,Address,,FALSE
+Other Phone,OtherPhone,Phone,,FALSE
+Phone,Phone,Phone,,FALSE
+Pronouns,Pronouns,Picklist,,FALSE
+Reports To,ReportsToId,Lookup(Contact),,TRUE
+Title,Title,Text(128),,FALSE
+ZuoraID(Contact),zID__c,Text(32),,FALSE

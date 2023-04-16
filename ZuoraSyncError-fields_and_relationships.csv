@@ -1,0 +1,11 @@
+FIELD LABEL,FIELD NAME,DATA TYPE,CONTROLLING FIELD,INDEXED
+APIEndpoint,APIEndpoint__c,Text(255),,FALSE
+Created By,CreatedById,Lookup(User),,FALSE
+Last Modfied By ,LastModifiedById,Lookup(User),,FALSE
+ObjectID,ObjectID__c,Text(32),,FALSE
+ObjectType,ObjectType__c,Picklist,,FALSE
+Owner,OwnerID,"Lookup(User,Group)",,TRUE
+RequestBody,RequestBody__c,Long Text Area(32768),,FALSE
+ResponseBody,ResponseBody__c,Long Text Area(32768),,FALSE
+ResponseCode,ResponseCode__c,Text(3),,FALSE
+ZuoraSyncError Name,Name,Text(80),,TRUE

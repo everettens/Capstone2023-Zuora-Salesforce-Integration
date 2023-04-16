@@ -1,0 +1,6 @@
+trigger AddRelatedRecord on Account (before insert) {
+	Map<Id,Account> acctsWithOpps = new Map<Id, Account> (
+    [SELECT Id, (SELECT Id FROM Opportunities)
+    FROM Account WHERE Id IN: Trigger.New]
+    );
+}

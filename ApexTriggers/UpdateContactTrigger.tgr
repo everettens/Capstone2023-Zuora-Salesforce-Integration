@@ -1,0 +1,53 @@
+trigger UpdateContactTrigger on Contact (after update) {
+    String zID;
+    if (trigger.isAfter){
+      	List<Map<String, Object>> contactList = new List<Map<String, Object>>();
+        
+        for (Contact ct : Trigger.new) {
+           if (ct.IsDeleted || ct.MasterRecordId != null) {
+                continue; 
+                //Skip accounts that are deleted, duplicates, or child accounts
+         	}
+            Map<String, Object> contactMap = new Map<String, Object>();
+			
+            //Map inside contactMap for address info
+            Map<String, Object> addressMap = new Map<String, Object>();
+            
+            contactMap.put('first_name', ct.FirstName);
+            contactMap.put('last_name', ct.LastName);
+            contactMap.put('work_email', ct.Email);
+            contactMap.put('work_phone', ct.Phone);
+            contactMap.put('home_phone', ct.HomePhone);
+            contactMap.put('mobile_phone', ct.MobilePhone);
+            
+            // storing contacts address
+            // Mailing address
+            addressMap.put('line1', ct.MailingStreet);
+            addressMap.put('city', ct.MailingCity);
+            addressMap.put('state', ct.MailingState);
+            addressMap.put('postal_code', ct.MailingPostalCode);
+            addressMap.put('country', ct.MailingCountry);
+            
+            
+            contactMap.put('address', addressMap);
+            
+            zID = ct.zID__c;
+            contactList.add(contactMap);
+        }//end for
+        
+        if (contactList.size() > 0 && zID != null) {
+            
+            Map<String, Object> jsonMap = new Map<String, Object>();
+            jsonMap.put('objects', contactList);
+            
+            String jsonString = JSON.serialize(contactList);
+            
+            //acc.ZID__c for ID
+            UpdateContactHelper.updateZuoraContact(zID, JSON.serialize(contactList[0]));
+           
+        }else if(zID == null) {
+            System.debug('ZuoraID is null');
+        }
+    }
+    
+}//end trigger

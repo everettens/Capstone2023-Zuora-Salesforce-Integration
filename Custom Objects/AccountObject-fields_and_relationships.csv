@@ -1,0 +1,42 @@
+Field Label,Field Name,Data Type,Controlling Field,Indexed
+Account Name,Name,Name,,TRUE
+Account Number,AccountNumber,Text(40),,FALSE
+Account Owner,OwnerId,Lookup(User),,TRUE
+Account Site,Site,Text(80),,FALSE
+Account Source,AccountSource,Picklist,,FALSE
+Active,Active__c,Picklist,,FALSE
+Annual Revenue,AnnualRevenue,"Currency(18,1)",,FALSE
+Billing Address,BillingAddress,Address,,FALSE
+Clean Status,CleanStatus,Picklist,,TRUE
+Created By,CreatedById,Lookup(User),,FALSE
+Customer Priority,CustomerPriority__c,Picklist,,FALSE
+D&B Company,DandbCompanyId,Lookup(D&B Company),,TRUE
+D-U-N-S Number,DunsNumber,Text(9),,FALSE
+Data.com Key,Jigsaw,Text(20),,FALSE
+Description,Description,Long Text Area(32000),,FALSE
+Einstien Account Tier,Tier,Text(2),,FALSE
+Employees,NumberofEmployees,"Number(8, 0)",,FALSE
+Fax,Fax,Fax,,FALSE
+Industry,Industry,Picklist,,FALSE
+Last Modified By,LastModifiedById,Lookup(User),,FALSE
+NAICS Code,NaicsCode,Text(8),,FALSE
+NAICS Description,NaicsDesc,Text(120),,FALSE
+Number of Locations,NumberofLocations__c,"Number(3, 0)",,FALSE
+Operating Hours,OperatingHoursId,Lookup(Operating Hours),,TRUE
+Ownership,Ownership,Picklist,,FALSE
+Parent Account,ParentId,Hierarchy,,TRUE
+Phone,Phone,Phone,,FALSE
+Rating,Rating,Picklist,,FALSE
+Shipping Address,ShippingAddress,Address,,FALSE
+SIC Code,Sic,Text(20),,FALSE
+SIC Description,SicDesc,Text(80),,FALSE
+SLA,SLA__c,Picklist,,FALSE
+SLA Expiration Date,SLAExpirationDate__c,Date,,FALSE
+SLA Serial Number,SLASerialNumber__c,Text(10),,FALSE
+Ticker Symbol,TickerSymbol,Content(20),,FALSE
+Tradestyle,Tradestyle,Text(255)	,,FALSE
+Type,Type,Picklist,,FALSE
+Upsell Opportunity,UpsellOpportunity__c,Picklist,,FALSE
+Website,Website,URL(255),,FALSE
+Year Started,YearStarted,Text(4),,FALSE
+ZuoraID(Account),zID__c,Text(32) (External ID),,TRUE

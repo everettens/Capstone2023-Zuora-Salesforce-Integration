@@ -106,7 +106,6 @@ The helper class also takes care of authentication and utilizes OAuth 2.0. This 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [Wes Spears (Zuora)](https://www.linkedin.com/in/wesleyspears/)
 * [Salesforce.com](https://developer.salesforce.com/docs)

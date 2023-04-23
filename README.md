@@ -44,7 +44,7 @@
  <!-- ABOUT THE PROJECT -->
  ## About The Project
  <p>
-   This is a capstone project at the College of Charleston in partnership with world-class paymant management compnay Zuora. Our team was tasked to work with our client, Wes Spears, at Zuora on a project they chose. In order to mimic a real world, industry-style project, our team implemented the SCRUM framework. 
+   This is a capstone project at the College of Charleston in partnership with world-class payment management company Zuora. Our team was tasked to work with our client, Wes Spears, at Zuora on a project they chose. In order to mimic a real-world, industry-style project, our team implemented the SCRUM framework. 
  </p>
  <p>
    The purpose of this project was to develop an API to sync account and contact information between Zuora and Salesforce. This will be able to save developers time and save the business money by being able to sync information efficiently and quickly.
@@ -85,7 +85,7 @@
   </p>
 
  ### Design Assumptions
- * The user has access to both Salesforce and Zuora as well as their respective sandbox developemnt environments
+ * The user has access to both Salesforce and Zuora as well as their respective sandbox development environments
  * The sObject already has an equivalent zObject
  * The user has a method of obtaining the Zuora ID for each Account and Contact sObject they wish to sync (i.e. using a Data Query)
 
@@ -93,11 +93,11 @@
 
  * The triggers ‘UpdateAccountTrigger’ and ‘UpdateContactTrigger’ have been added to the Salesforce workspace
  * The classes ‘UpdateAccountHelper’ and ‘UpdateContactHelper’ have been added to the Salesforce workspace
- * Aforementioned classes and triggers have been configured correctly (more details below)
+ * The aforementioned classes and triggers have been configured correctly (more details below)
  * The Salesforce Account and Contact sObjects have a custom field ‘zID’ for storing its Zuora ID
  * The user’s Salesforce workspace has a custom ‘ZuoraSyncError’ sObject
  * The user’s Zuora sandbox already has an OAuth 2.0 Provider set up
- * The user has aforementioned OAuth 2.0 Provider’s Client ID and Client Secret
+ * The user has the aforementioned OAuth 2.0 Provider’s Client ID and Client Secret
 
 
 
